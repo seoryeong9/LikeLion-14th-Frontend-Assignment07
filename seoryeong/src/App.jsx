@@ -18,20 +18,23 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-extrabold text-purple-700 mb-6">게시글</h1>
+      <h1 className="text-3xl font-extrabold text-purple-700 mb-6">게시글 모아보기</h1>
 
-      {data &&
-        data.map((post) => (
-          <div
-            key={post.id}
-            className="bg-white border border-purple-300 rounded-2xl p-6 mt-4"
-          >
-            <h2 className="text-lg font-bold text-gray-900">{post.title}</h2>
-            <p className="text-sm text-gray-600 mt-2">{post.body}</p>
-          </div>
-        ))}
+      {data && (
+        <div className="grid grid-cols-3 gap-4">
+          {data.map((post) => (
+            <div
+              key={post.id}
+              className="bg-white border border-purple-300 rounded-2xl p-6"
+            >
+              <h2 className="text-lg font-bold text-gray-900">{post.title}</h2>
+              <p className="text-sm text-gray-600 mt-2">{post.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
 
-export default App;
+export default App; 
